@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D1A64695-8DFA-4307-8249-EAA1F33007D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RPG</RootNamespace>
+    <AssemblyName>RPG</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Data\BioDataDataSet.cs">
+      <DependentUpon>BioDataDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Data\BioDataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BioDataDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Data\BioDataController.cs" />
+    <Compile Include="Game\AIBio.cs" />
+    <Compile Include="Game\BattleBioValues.cs" />
+    <Compile Include="Game\BattleEquipage.cs" />
+    <Compile Include="Game\BattleSystem.cs" />
+    <Compile Include="Game\BGWorker.cs" />
+    <Compile Include="Game\Bio.cs" />
+    <Compile Include="Game\GeologicType.cs" />
+    <Compile Include="Game\I4DirectMovement.cs" />
+    <Compile Include="Game\IBattler.cs" />
+    <Compile Include="Game\IMonsterDataControl.cs" />
+    <Compile Include="Game\IObeserve.cs" />
+    <Compile Include="Game\IRoleDataControl.cs" />
+    <Compile Include="Game\BattleBio.cs" />
+    <Compile Include="Game\PointCapacity.cs" />
+    <Compile Include="Game\TestView\CreateRoleSimple.xaml.cs">
+      <DependentUpon>CreateRoleSimple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\2D\BioView.cs" />
+    <Compile Include="Game\2D\Camera.cs" />
+    <Compile Include="Game\2D\Direction.cs" />
+    <Compile Include="Game\2D\Map.cs" />
+    <Compile Include="Game\2D\MapBlock.cs" />
+    <Compile Include="Game\2D\MapData.cs" />
+    <Compile Include="Game\2D\MapView.cs" />
+    <Compile Include="Game\2D\TextureManager.cs" />
+    <Compile Include="HLib\HMath.cs" />
+    <Compile Include="HLib\ImageManager.cs" />
+    <Compile Include="HLib\Key.cs" />
+    <Compile Include="HLib\KeyDelegate.cs" />
+    <Compile Include="HLib\Location.cs" />
+    <Compile Include="HLib\Pair.cs" />
+    <Compile Include="HLib\Size.cs" />
+    <Compile Include="HLib\Timer.cs" />
+    <Compile Include="Map\MapDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MapDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Map\MapDataController.cs" />
+    <Compile Include="View\DynamicControl.cs" />
+    <Compile Include="View\HButton.cs" />
+    <Compile Include="View\HControl.cs" />
+    <Compile Include="View\HControlCollection.cs" />
+    <Compile Include="View\IDynamicAction.cs" />
+    <Compile Include="View\IH.cs" />
+    <Compile Include="View\Layout.cs" />
+    <Compile Include="View\MatrixControl.cs" />
+    <Compile Include="View\Menu.cs" />
+    <Compile Include="View\MouseEevent.cs" />
+    <Compile Include="View\Num.xaml.cs">
+      <DependentUpon>Num.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Screen.cs" />
+    <Compile Include="View\TitleScreen.cs" />
+    <Compile Include="View\WindowController.cs" />
+    <Page Include="Game\TestView\CreateRoleSimple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\Num.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Data\BioDataDataSet.xsc">
+      <DependentUpon>BioDataDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Data\BioDataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BioDataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Data\BioDataDataSet.xss">
+      <DependentUpon>BioDataDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Map\MapDataSet.xsc">
+      <DependentUpon>MapDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Map\MapDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MapDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Map\MapDataSet.xss">
+      <DependentUpon>MapDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\0.jpg" />
+    <Resource Include="Image\0.png" />
+    <Resource Include="Image\1.jpg" />
+    <Resource Include="Image\2.jpg" />
+    <Resource Include="Image\D0.png" />
+    <Resource Include="Image\D1.png" />
+    <Resource Include="Image\D2.png" />
+    <Resource Include="Image\L0.png" />
+    <Resource Include="Image\L1.png" />
+    <Resource Include="Image\L2.png" />
+    <Resource Include="Image\R0.png" />
+    <Resource Include="Image\R1.png" />
+    <Resource Include="Image\R2.png" />
+    <Resource Include="Image\R3.png" />
+    <Resource Include="Image\U0.png" />
+    <Resource Include="Image\U1.png" />
+    <Resource Include="Image\U2.png" />
+    <Resource Include="Image\人物2.png" />
+    <Resource Include="Image\地圖.png" />
+    <Resource Include="Image\岩石.png" />
+    <Resource Include="Image\怪物180.png" />
+    <Resource Include="Image\怪物a.png" />
+    <Resource Include="Image\怪物b.png" />
+    <Resource Include="Image\怪物c.png" />
+    <Resource Include="Image\怪物d.png" />
+    <Resource Include="Image\樹林.png" />
+    <Resource Include="Image\欄背景.jpg" />
+    <Resource Include="Image\沙岸.png" />
+    <Resource Include="Image\河流.png" />
+    <Resource Include="Image\石牆a.png" />
+    <Resource Include="Image\石牆b.png" />
+    <Resource Include="Image\石路.png" />
+    <Resource Include="Image\草地.png" />
+    <Resource Include="Image\雜貨店A11.png" />
+    <Resource Include="Image\雜貨店A12.png" />
+    <Resource Include="Image\雜貨店A13.png" />
+    <Resource Include="Image\雜貨店A21.png" />
+    <Resource Include="Image\雜貨店A22.png" />
+    <Resource Include="Image\雜貨店A23.png" />
+    <Resource Include="Image\鵝卵石.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\BioData.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Map\Map.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Map\map1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Game\2D\RPG\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
