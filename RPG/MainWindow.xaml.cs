@@ -3,11 +3,12 @@ using hoshi_lib.Input;
 using hoshi_lib.Data;
 using hoshi_lib.Game;
 using hoshi_lib.Game.TestView;
-using hoshi_lib.Game.Texture2D;
 using hoshi_lib.View;
 using System;
 using System.Windows.Media;
 using Windows = System.Windows;
+using hoshi_lib.Game._2D.RPG;
+using hoshi_lib.Game._2D;
 
 namespace RPG {
 
@@ -46,20 +47,19 @@ namespace RPG {
         Screen gameScreen;
         WindowController win;
         
-        private Map map;
-        private MapData mapData;
-        private MapView mapView;
-        private MapTextureManager mapTexture;
+        Map map;
+        MapData mapData;
+        MapView mapView;
+        MapTextureManager mapTexture;
 
-        private BattleBio protagonist;
-        private BattleBioValues protagonistValue;
-        private BioView protagonistView;
-        private BattleBio monster;
-        private BattleBioValues monsterValue;
-        private BioView monsterView;
-        private Camera camera;
-        private BioDataController bioC = new BioDataController();
-        private PointCapacityControl pcc = new PointCapacityControl();
+        BattleBio protagonist;
+        BattleBioValues protagonistValue;
+        BioView protagonistView;
+        BattleBio monster;
+        BattleBioValues monsterValue;
+        BioView monsterView;
+        Camera camera;
+        BioDataController bioC=new BioDataController();
 
         public GameStage(WindowController win) {
             this.win = win;
@@ -68,7 +68,6 @@ namespace RPG {
             SetKeyEvent();
             SetCamera();
             PutMonster();
-            AddPointControl();
         }
         public void MakeMap() {
 
@@ -89,7 +88,7 @@ namespace RPG {
             protagonistView = new BioView("../../Image/", new Size(50, 50), 3);
             protagonist = new BattleBio(protagonistValue, protagonistView);
             
-            map.RegisterBattleBio(protagonist);
+            map.RegisterBattleBio(protagonist,new Pair(6,10));
         }
         public void SetKeyEvent() {
             KeyDelegate keyD = new KeyDelegate(win);
@@ -107,7 +106,7 @@ namespace RPG {
             monsterValue = bioC.LoadRole(2);
             monsterView = new BioView("../../Image/", new Size(50, 50), 3);
             monster = new AIBio(monsterValue, monsterView);
-            map.RegisterBattleBio(monster);
+            map.RegisterBattleBio(monster, new Pair(11, 8));
         }
         public int DamageFunc(IBattler atkBio, IBattler defBio) {
             return atkBio.Atk - defBio.Def;
@@ -117,15 +116,6 @@ namespace RPG {
             var dLoc = defBio.MatrixLocation;
 
             return Math.Abs((aLoc.X - dLoc.X) + (aLoc.Y - dLoc.Y)) == 1;
-        }
-        public void AddPointControl() {
-            pcc.HP = protagonistValue.Hp.Point;
-            pcc.SP = protagonistValue.Sp.Point;
-            pcc.MaxHP = protagonistValue.Hp.Max;
-            pcc.MaxSP = protagonistValue.Sp.Max;
-            pcc.Name = protagonistValue.Name;
-            pcc.Lv = protagonistValue.Level;
-            gameScreen.AddHControl(new HControl(pcc) { Location = new Location(10, 5) });
         }
     }
 }

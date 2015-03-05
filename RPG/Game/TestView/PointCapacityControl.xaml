@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="hoshi_lib.Game.TestView.PointCapacityControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="253.333" Height="86" Foreground="#FF422E2E">
+    <Grid HorizontalAlignment="Left" Width="260" Height="90" VerticalAlignment="Top" Background="#FF25182B">
+        <ProgressBar x:Name="HpBar" Margin="47,0,16,37" Height="20" VerticalAlignment="Bottom" Value="50" Foreground="#FFA62E5A"/>
+        <ProgressBar x:Name="SpBar" Margin="47,0,16,12" Height="20" VerticalAlignment="Bottom" Foreground="#FF1B2964" Value="50"/>
+        <TextBlock x:Name="LvTxt" HorizontalAlignment="Left" Margin="9,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="22" Foreground="#FFAC83A6" FontSize="16"/>
+        <TextBlock x:Name="NameTxt" HorizontalAlignment="Left" Margin="49,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Height="22" Foreground="#FFAC83A6" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,36,0,0" TextWrapping="Wrap" Text="HP" VerticalAlignment="Top" Foreground="#FFAC83A6"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,61,0,0" TextWrapping="Wrap" Text="SP" VerticalAlignment="Top" Foreground="#FFAC83A6"/>
+
+    </Grid>
+</UserControl>

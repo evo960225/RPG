@@ -21,8 +21,8 @@ namespace hoshi_lib.Game._2D {
         public void RegisterBio(Bio bio) {
             View.AddHControl(bio.view);
         }
-        public void RegisterBattleBio(BattleBio battleBio, Pair? Location = null) {
-            battleBio.values.MatrixLocation = Location ?? battleBio.values.MatrixLocation;
+        public void RegisterBattleBio(BattleBio battleBio,Pair Location) {
+            battleBio.values.MatrixLocation = Location;
             Data.AddBio(battleBio.values);
             battleBio.SetViewLoactionByData();
             View.AddHControl(battleBio.view);
