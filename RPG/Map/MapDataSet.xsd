@@ -165,7 +165,7 @@
   <xs:element name="MapDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MapDataSet" msprop:Generator_UserDSName="MapDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="map" msprop:Generator_TableClassName="mapDataTable" msprop:Generator_TableVarName="tablemap" msprop:Generator_TablePropName="map" msprop:Generator_RowDeletingName="mapRowDeleting" msprop:Generator_RowChangingName="mapRowChanging" msprop:Generator_RowEvHandlerName="mapRowChangeEventHandler" msprop:Generator_RowDeletedName="mapRowDeleted" msprop:Generator_UserTableName="map" msprop:Generator_RowChangedName="mapRowChanged" msprop:Generator_RowEvArgName="mapRowChangeEvent" msprop:Generator_RowClassName="mapRow">
+        <xs:element name="map" msprop:Generator_TableClassName="mapDataTable" msprop:Generator_TableVarName="tablemap" msprop:Generator_RowChangedName="mapRowChanged" msprop:Generator_TablePropName="map" msprop:Generator_RowDeletingName="mapRowDeleting" msprop:Generator_RowChangingName="mapRowChanging" msprop:Generator_RowEvHandlerName="mapRowChangeEventHandler" msprop:Generator_RowDeletedName="mapRowDeleted" msprop:Generator_RowClassName="mapRow" msprop:Generator_UserTableName="map" msprop:Generator_RowEvArgName="mapRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -186,7 +186,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="map_block" msprop:Generator_TableClassName="map_blockDataTable" msprop:Generator_TableVarName="tablemap_block" msprop:Generator_TablePropName="map_block" msprop:Generator_RowDeletingName="map_blockRowDeleting" msprop:Generator_RowChangingName="map_blockRowChanging" msprop:Generator_RowEvHandlerName="map_blockRowChangeEventHandler" msprop:Generator_RowDeletedName="map_blockRowDeleted" msprop:Generator_UserTableName="map_block" msprop:Generator_RowChangedName="map_blockRowChanged" msprop:Generator_RowEvArgName="map_blockRowChangeEvent" msprop:Generator_RowClassName="map_blockRow">
+        <xs:element name="map_block" msprop:Generator_TableClassName="map_blockDataTable" msprop:Generator_TableVarName="tablemap_block" msprop:Generator_RowChangedName="map_blockRowChanged" msprop:Generator_TablePropName="map_block" msprop:Generator_RowDeletingName="map_blockRowDeleting" msprop:Generator_RowChangingName="map_blockRowChanging" msprop:Generator_RowEvHandlerName="map_blockRowChangeEventHandler" msprop:Generator_RowDeletedName="map_blockRowDeleted" msprop:Generator_RowClassName="map_blockRow" msprop:Generator_UserTableName="map_block" msprop:Generator_RowEvArgName="map_blockRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -201,7 +201,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="map_type" msprop:Generator_TableClassName="map_typeDataTable" msprop:Generator_TableVarName="tablemap_type" msprop:Generator_TablePropName="map_type" msprop:Generator_RowDeletingName="map_typeRowDeleting" msprop:Generator_RowChangingName="map_typeRowChanging" msprop:Generator_RowEvHandlerName="map_typeRowChangeEventHandler" msprop:Generator_RowDeletedName="map_typeRowDeleted" msprop:Generator_UserTableName="map_type" msprop:Generator_RowChangedName="map_typeRowChanged" msprop:Generator_RowEvArgName="map_typeRowChangeEvent" msprop:Generator_RowClassName="map_typeRow">
+        <xs:element name="map_type" msprop:Generator_TableClassName="map_typeDataTable" msprop:Generator_TableVarName="tablemap_type" msprop:Generator_RowChangedName="map_typeRowChanged" msprop:Generator_TablePropName="map_type" msprop:Generator_RowDeletingName="map_typeRowDeleting" msprop:Generator_RowChangingName="map_typeRowChanging" msprop:Generator_RowEvHandlerName="map_typeRowChangeEventHandler" msprop:Generator_RowDeletedName="map_typeRowDeleted" msprop:Generator_RowClassName="map_typeRow" msprop:Generator_UserTableName="map_type" msprop:Generator_RowEvArgName="map_typeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="typeID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columntypeID" msprop:Generator_ColumnPropNameInRow="typeID" msprop:Generator_ColumnPropNameInTable="typeIDColumn" msprop:Generator_UserColumnName="typeID" type="xs:int" />

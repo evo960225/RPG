@@ -1,7 +1,8 @@
 ﻿using hoshi_lib.Data;
+using hoshi_lib.Game._2D.RPG;
 using hoshi_lib.View;
 
-namespace hoshi_lib.Game.Texture2D {
+namespace hoshi_lib.Game._2D {
     
     public class Map {
 
@@ -20,8 +21,8 @@ namespace hoshi_lib.Game.Texture2D {
         public void RegisterBio(Bio bio) {
             View.AddHControl(bio.view);
         }
-        public void RegisterBattleBio(BattleBio battleBio,Pair Location) {
-            battleBio.values.MatrixLocation = Location;
+        public void RegisterBattleBio(BattleBio battleBio, Pair? Location = null) {
+            battleBio.values.MatrixLocation = Location ?? battleBio.values.MatrixLocation;
             Data.AddBio(battleBio.values);
             battleBio.SetViewLoactionByData();
             View.AddHControl(battleBio.view);

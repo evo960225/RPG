@@ -5,6 +5,9 @@ using System.Text;
 using hoshi_lib.Game;
 using Database = RPG.Data;
 using BioTA = RPG.Data.BioDataDataSetTableAdapters;
+using hoshi_lib.Game._2D.RPG;
+using hoshi_lib.Game._2D.RPG.Data;
+using hoshi_lib.Game.RPG;
 namespace hoshi_lib.Data {
     public class BioDataController:IRoleDataControl,IMonsterDataControl {
 
@@ -24,15 +27,19 @@ namespace hoshi_lib.Data {
 
         public BattleBioValues LoadRole(int id) {
             roleNum.Fill(DS.role_numerical);
-           var table = DS.role_numerical.Where((x) => x.ID == id);
+            roleName.Fill(DS.role_name);
+            var name=DS.role_name.Where((x)=>x.ID==id).ElementAt(0).rname;
+            var table = DS.role_numerical.Where((x) => x.ID == id);
             if (table.Count() != 0) {
                 var role = table.ElementAt(0);
                 BattleBioValues val = new BattleBioValues() {
+                    Name=name,
                     Level = role.Lv,
                     Hp = new PointCapacity(role.HP, role.MaxHP),
                     Sp = new PointCapacity(role.SP, role.MaxSP),
                     Atk = role.ATK,
-                    Def = role.DEF
+                    Def = role.DEF,
+                    MatrixLocation=new Pair(role.LocationX,role.LocationY)
                 };
 
                 return val;

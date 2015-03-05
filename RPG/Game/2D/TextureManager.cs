@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using hoshi_lib.Image;
 using hoshi_lib.Data;
 using System.Windows.Media.Imaging;
 
-namespace hoshi_lib.Game.Texture2D {
+namespace hoshi_lib.Game._2D {
 
     public class MapTextureManager : ImageManager {
 

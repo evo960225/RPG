@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using hoshi_lib.View;
 
-namespace hoshi_lib.Game.Texture2D {
+namespace hoshi_lib.Game._2D {
 
     class MapBlockView : HControl {
 

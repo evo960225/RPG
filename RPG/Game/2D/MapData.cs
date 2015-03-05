@@ -1,7 +1,8 @@
 ﻿using System.IO;
 using System.Collections.Generic;
+using hoshi_lib.Game._2D.RPG;
 
-namespace hoshi_lib.Game.Texture2D {
+namespace hoshi_lib.Game._2D {
     public class MapData {
         
         public int[,] MatrixID;

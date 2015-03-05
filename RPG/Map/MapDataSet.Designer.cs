@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace hoshi_lib.Data {
+namespace RPG.Map {
     
     
     /// <summary>
@@ -1517,7 +1517,7 @@ namespace hoshi_lib.Data {
         }
     }
 }
-namespace hoshi_lib.Data.MapDataSetTableAdapters {
+namespace RPG.Map.MapDataSetTableAdapters {
     
     
     /// <summary>

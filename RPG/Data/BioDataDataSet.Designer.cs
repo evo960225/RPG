@@ -2911,6 +2911,10 @@ namespace RPG.Data {
             
             private global::System.Data.DataColumn columnMaxExp;
             
+            private global::System.Data.DataColumn columnLocationX;
+            
+            private global::System.Data.DataColumn columnLocationY;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public role_numericalDataTable() {
@@ -3026,6 +3030,22 @@ namespace RPG.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LocationXColumn {
+                get {
+                    return this.columnLocationX;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LocationYColumn {
+                get {
+                    return this.columnLocationY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3061,7 +3081,7 @@ namespace RPG.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public role_numericalRow Addrole_numericalRow(int Lv, int HP, int SP, int MaxHP, int MaxSP, int ATK, int DEF, int Exp, int MaxExp) {
+            public role_numericalRow Addrole_numericalRow(int Lv, int HP, int SP, int MaxHP, int MaxSP, int ATK, int DEF, int Exp, int MaxExp, int LocationX, int LocationY) {
                 role_numericalRow rowrole_numericalRow = ((role_numericalRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3073,7 +3093,9 @@ namespace RPG.Data {
                         ATK,
                         DEF,
                         Exp,
-                        MaxExp};
+                        MaxExp,
+                        LocationX,
+                        LocationY};
                 rowrole_numericalRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrole_numericalRow);
                 return rowrole_numericalRow;
@@ -3113,6 +3135,8 @@ namespace RPG.Data {
                 this.columnDEF = base.Columns["DEF"];
                 this.columnExp = base.Columns["Exp"];
                 this.columnMaxExp = base.Columns["MaxExp"];
+                this.columnLocationX = base.Columns["LocationX"];
+                this.columnLocationY = base.Columns["LocationY"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3138,6 +3162,10 @@ namespace RPG.Data {
                 base.Columns.Add(this.columnExp);
                 this.columnMaxExp = new global::System.Data.DataColumn("MaxExp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaxExp);
+                this.columnLocationX = new global::System.Data.DataColumn("LocationX", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocationX);
+                this.columnLocationY = new global::System.Data.DataColumn("LocationY", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocationY);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -4126,6 +4154,38 @@ namespace RPG.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int LocationX {
+                get {
+                    try {
+                        return ((int)(this[this.tablerole_numerical.LocationXColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'role_numerical\' 中資料行 \'LocationX\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablerole_numerical.LocationXColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int LocationY {
+                get {
+                    try {
+                        return ((int)(this[this.tablerole_numerical.LocationYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'role_numerical\' 中資料行 \'LocationY\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablerole_numerical.LocationYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsLvNull() {
                 return this.IsNull(this.tablerole_numerical.LvColumn);
             }
@@ -4230,6 +4290,30 @@ namespace RPG.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMaxExpNull() {
                 this[this.tablerole_numerical.MaxExpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLocationXNull() {
+                return this.IsNull(this.tablerole_numerical.LocationXColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLocationXNull() {
+                this[this.tablerole_numerical.LocationXColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLocationYNull() {
+                return this.IsNull(this.tablerole_numerical.LocationYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLocationYNull() {
+                this[this.tablerole_numerical.LocationYColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7443,10 +7527,12 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("DEF", "DEF");
             tableMapping.ColumnMappings.Add("Exp", "Exp");
             tableMapping.ColumnMappings.Add("MaxExp", "MaxExp");
+            tableMapping.ColumnMappings.Add("LocationX", "LocationX");
+            tableMapping.ColumnMappings.Add("LocationY", "LocationY");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `role_numerical` WHERE ((`ID` = ?) AND ((? = 1 AND `Lv` IS NULL) OR (`Lv` = ?)) AND ((? = 1 AND `HP` IS NULL) OR (`HP` = ?)) AND ((? = 1 AND `SP` IS NULL) OR (`SP` = ?)) AND ((? = 1 AND `MaxHP` IS NULL) OR (`MaxHP` = ?)) AND ((? = 1 AND `MaxSP` IS NULL) OR (`MaxSP` = ?)) AND ((? = 1 AND `ATK` IS NULL) OR (`ATK` = ?)) AND ((? = 1 AND `DEF` IS NULL) OR (`DEF` = ?)) AND ((? = 1 AND `Exp` IS NULL) OR (`Exp` = ?)) AND ((? = 1 AND `MaxExp` IS NULL) OR (`MaxExp` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `role_numerical` WHERE ((`ID` = ?) AND ((? = 1 AND `Lv` IS NULL) OR (`Lv` = ?)) AND ((? = 1 AND `HP` IS NULL) OR (`HP` = ?)) AND ((? = 1 AND `SP` IS NULL) OR (`SP` = ?)) AND ((? = 1 AND `MaxHP` IS NULL) OR (`MaxHP` = ?)) AND ((? = 1 AND `MaxSP` IS NULL) OR (`MaxSP` = ?)) AND ((? = 1 AND `ATK` IS NULL) OR (`ATK` = ?)) AND ((? = 1 AND `DEF` IS NULL) OR (`DEF` = ?)) AND ((? = 1 AND `Exp` IS NULL) OR (`Exp` = ?)) AND ((? = 1 AND `MaxExp` IS NULL) OR (`MaxExp` = ?)) AND ((? = 1 AND `LocationX` IS NULL) OR (`LocationX` = ?)) AND ((? = 1 AND `LocationY` IS NULL) OR (`LocationY` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Lv", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Lv", global::System.Data.DataRowVersion.Original, true, null));
@@ -7467,10 +7553,15 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Exp", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Exp", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_MaxExp", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MaxExp", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_MaxExp", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MaxExp", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_LocationX", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LocationX", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_LocationX", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LocationX", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_LocationY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LocationY", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_LocationY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LocationY", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `role_numerical` (`Lv`, `HP`, `SP`, `MaxHP`, `MaxSP`, `ATK`, `DEF`, `" +
-                "Exp`, `MaxExp`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "Exp`, `MaxExp`, `LocationX`, `LocationY`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, " +
+                "?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Lv", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Lv", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HP", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HP", global::System.Data.DataRowVersion.Current, false, null));
@@ -7481,9 +7572,11 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DEF", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DEF", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Exp", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Exp", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MaxExp", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MaxExp", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LocationX", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LocationX", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LocationY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LocationY", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `role_numerical` SET `Lv` = ?, `HP` = ?, `SP` = ?, `MaxHP` = ?, `MaxSP` = ?, `ATK` = ?, `DEF` = ?, `Exp` = ?, `MaxExp` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Lv` IS NULL) OR (`Lv` = ?)) AND ((? = 1 AND `HP` IS NULL) OR (`HP` = ?)) AND ((? = 1 AND `SP` IS NULL) OR (`SP` = ?)) AND ((? = 1 AND `MaxHP` IS NULL) OR (`MaxHP` = ?)) AND ((? = 1 AND `MaxSP` IS NULL) OR (`MaxSP` = ?)) AND ((? = 1 AND `ATK` IS NULL) OR (`ATK` = ?)) AND ((? = 1 AND `DEF` IS NULL) OR (`DEF` = ?)) AND ((? = 1 AND `Exp` IS NULL) OR (`Exp` = ?)) AND ((? = 1 AND `MaxExp` IS NULL) OR (`MaxExp` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `role_numerical` SET `Lv` = ?, `HP` = ?, `SP` = ?, `MaxHP` = ?, `MaxSP` = ?, `ATK` = ?, `DEF` = ?, `Exp` = ?, `MaxExp` = ?, `LocationX` = ?, `LocationY` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Lv` IS NULL) OR (`Lv` = ?)) AND ((? = 1 AND `HP` IS NULL) OR (`HP` = ?)) AND ((? = 1 AND `SP` IS NULL) OR (`SP` = ?)) AND ((? = 1 AND `MaxHP` IS NULL) OR (`MaxHP` = ?)) AND ((? = 1 AND `MaxSP` IS NULL) OR (`MaxSP` = ?)) AND ((? = 1 AND `ATK` IS NULL) OR (`ATK` = ?)) AND ((? = 1 AND `DEF` IS NULL) OR (`DEF` = ?)) AND ((? = 1 AND `Exp` IS NULL) OR (`Exp` = ?)) AND ((? = 1 AND `MaxExp` IS NULL) OR (`MaxExp` = ?)) AND ((? = 1 AND `LocationX` IS NULL) OR (`LocationX` = ?)) AND ((? = 1 AND `LocationY` IS NULL) OR (`LocationY` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Lv", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Lv", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HP", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HP", global::System.Data.DataRowVersion.Current, false, null));
@@ -7494,6 +7587,8 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DEF", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DEF", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Exp", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Exp", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MaxExp", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MaxExp", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LocationX", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LocationX", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LocationY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LocationY", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Lv", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Lv", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Lv", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Lv", global::System.Data.DataRowVersion.Original, false, null));
@@ -7513,6 +7608,10 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Exp", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Exp", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_MaxExp", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MaxExp", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_MaxExp", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MaxExp", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_LocationX", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LocationX", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_LocationX", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LocationX", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_LocationY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LocationY", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_LocationY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LocationY", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7528,7 +7627,8 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Lv, HP, SP, MaxHP, MaxSP, ATK, DEF, Exp, MaxExp FROM role_numerical";
+            this._commandCollection[0].CommandText = "SELECT ID, Lv, HP, SP, MaxHP, MaxSP, ATK, DEF, Exp, MaxExp, LocationX, LocationY " +
+                "FROM role_numerical";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7589,7 +7689,7 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, global::System.Nullable<int> Original_Lv, global::System.Nullable<int> Original_HP, global::System.Nullable<int> Original_SP, global::System.Nullable<int> Original_MaxHP, global::System.Nullable<int> Original_MaxSP, global::System.Nullable<int> Original_ATK, global::System.Nullable<int> Original_DEF, global::System.Nullable<int> Original_Exp, global::System.Nullable<int> Original_MaxExp) {
+        public virtual int Delete(int Original_ID, global::System.Nullable<int> Original_Lv, global::System.Nullable<int> Original_HP, global::System.Nullable<int> Original_SP, global::System.Nullable<int> Original_MaxHP, global::System.Nullable<int> Original_MaxSP, global::System.Nullable<int> Original_ATK, global::System.Nullable<int> Original_DEF, global::System.Nullable<int> Original_Exp, global::System.Nullable<int> Original_MaxExp, global::System.Nullable<int> Original_LocationX, global::System.Nullable<int> Original_LocationY) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Lv.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -7663,6 +7763,22 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
+            if ((Original_LocationX.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((int)(Original_LocationX.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LocationY.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_LocationY.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7683,7 +7799,7 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> Lv, global::System.Nullable<int> HP, global::System.Nullable<int> SP, global::System.Nullable<int> MaxHP, global::System.Nullable<int> MaxSP, global::System.Nullable<int> ATK, global::System.Nullable<int> DEF, global::System.Nullable<int> Exp, global::System.Nullable<int> MaxExp) {
+        public virtual int Insert(global::System.Nullable<int> Lv, global::System.Nullable<int> HP, global::System.Nullable<int> SP, global::System.Nullable<int> MaxHP, global::System.Nullable<int> MaxSP, global::System.Nullable<int> ATK, global::System.Nullable<int> DEF, global::System.Nullable<int> Exp, global::System.Nullable<int> MaxExp, global::System.Nullable<int> LocationX, global::System.Nullable<int> LocationY) {
             if ((Lv.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Lv.Value));
             }
@@ -7738,6 +7854,18 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
+            if ((LocationX.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(LocationX.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((LocationY.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(LocationY.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7768,6 +7896,8 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
                     global::System.Nullable<int> DEF, 
                     global::System.Nullable<int> Exp, 
                     global::System.Nullable<int> MaxExp, 
+                    global::System.Nullable<int> LocationX, 
+                    global::System.Nullable<int> LocationY, 
                     int Original_ID, 
                     global::System.Nullable<int> Original_Lv, 
                     global::System.Nullable<int> Original_HP, 
@@ -7777,7 +7907,9 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
                     global::System.Nullable<int> Original_ATK, 
                     global::System.Nullable<int> Original_DEF, 
                     global::System.Nullable<int> Original_Exp, 
-                    global::System.Nullable<int> Original_MaxExp) {
+                    global::System.Nullable<int> Original_MaxExp, 
+                    global::System.Nullable<int> Original_LocationX, 
+                    global::System.Nullable<int> Original_LocationY) {
             if ((Lv.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Lv.Value));
             }
@@ -7832,78 +7964,106 @@ namespace RPG.Data.BioDataDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ID));
-            if ((Original_Lv.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Lv.Value));
+            if ((LocationX.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(LocationX.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_HP.HasValue == true)) {
+            if ((LocationY.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(LocationY.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_ID));
+            if ((Original_Lv.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_HP.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Lv.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Original_SP.HasValue == true)) {
+            if ((Original_HP.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_SP.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_HP.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((Original_MaxHP.HasValue == true)) {
+            if ((Original_SP.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_MaxHP.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_SP.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((Original_MaxSP.HasValue == true)) {
+            if ((Original_MaxHP.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_MaxSP.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_MaxHP.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((Original_ATK.HasValue == true)) {
+            if ((Original_MaxSP.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_ATK.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_MaxSP.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((Original_DEF.HasValue == true)) {
+            if ((Original_ATK.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_DEF.Value));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_ATK.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            if ((Original_Exp.HasValue == true)) {
+            if ((Original_DEF.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_Exp.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_DEF.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            if ((Original_MaxExp.HasValue == true)) {
+            if ((Original_Exp.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_MaxExp.Value));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_Exp.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            if ((Original_MaxExp.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Original_MaxExp.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LocationX.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(Original_LocationX.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LocationY.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_LocationY.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 

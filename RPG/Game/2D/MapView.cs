@@ -1,6 +1,6 @@
 ﻿using hoshi_lib.View;
 using System.Windows.Media;
-namespace hoshi_lib.Game.Texture2D {
+namespace hoshi_lib.Game._2D {
 
     public class MapView : HControlCollection {
         

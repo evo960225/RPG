@@ -33,9 +33,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -65,24 +70,24 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Data\BioDataController.cs" />
-    <Compile Include="Game\AIBio.cs" />
-    <Compile Include="Game\BattleBioValues.cs" />
-    <Compile Include="Game\BattleEquipage.cs" />
-    <Compile Include="Game\BattleSystem.cs" />
-    <Compile Include="Game\BGWorker.cs" />
-    <Compile Include="Game\Bio.cs" />
-    <Compile Include="Game\GeologicType.cs" />
-    <Compile Include="Game\I4DirectMovement.cs" />
-    <Compile Include="Game\IBattler.cs" />
-    <Compile Include="Game\IMonsterDataControl.cs" />
-    <Compile Include="Game\IObeserve.cs" />
-    <Compile Include="Game\IRoleDataControl.cs" />
-    <Compile Include="Game\BattleBio.cs" />
-    <Compile Include="Game\PointCapacity.cs" />
+    <Compile Include="Game\2D\RPG\AIBio.cs" />
+    <Compile Include="Game\2D\RPG\BattleBioValues.cs" />
+    <Compile Include="Game\RPG\Equipage.cs" />
+    <Compile Include="Game\2D\RPG\BattleSystem.cs" />
+    <Compile Include="Threading\BGWorker.cs" />
+    <Compile Include="Game\2D\Bio.cs" />
+    <Compile Include="Game\2D\GeologicType.cs" />
+    <Compile Include="Game\2D\I4DirectMovement.cs" />
+    <Compile Include="Game\2D\RPG\IBattler.cs" />
+    <Compile Include="Game\2D\RPG\Data\IMonsterDataControl.cs" />
+    <Compile Include="HLib\IObeserve.cs" />
+    <Compile Include="Game\2D\RPG\Data\IRoleDataControl.cs" />
+    <Compile Include="Game\2D\RPG\BattleBio.cs" />
+    <Compile Include="Game\RPG\PointCapacity.cs" />
     <Compile Include="Game\TestView\CreateRoleSimple.xaml.cs">
       <DependentUpon>CreateRoleSimple.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Game\2D\BioView.cs" />
+    <Compile Include="Game\2D\RPG\BioView.cs" />
     <Compile Include="Game\2D\Camera.cs" />
     <Compile Include="Game\2D\Direction.cs" />
     <Compile Include="Game\2D\Map.cs" />
@@ -90,14 +95,17 @@
     <Compile Include="Game\2D\MapData.cs" />
     <Compile Include="Game\2D\MapView.cs" />
     <Compile Include="Game\2D\TextureManager.cs" />
+    <Compile Include="Game\TestView\PointCapacityControl.xaml.cs">
+      <DependentUpon>PointCapacityControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HLib\HMath.cs" />
     <Compile Include="HLib\ImageManager.cs" />
-    <Compile Include="HLib\Key.cs" />
-    <Compile Include="HLib\KeyDelegate.cs" />
+    <Compile Include="Input\Key.cs" />
+    <Compile Include="Input\KeyDelegate.cs" />
     <Compile Include="HLib\Location.cs" />
     <Compile Include="HLib\Pair.cs" />
     <Compile Include="HLib\Size.cs" />
-    <Compile Include="HLib\Timer.cs" />
+    <Compile Include="Threading\Timer.cs" />
     <Compile Include="Map\MapDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,6 +131,10 @@
     <Page Include="Game\TestView\CreateRoleSimple.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Game\TestView\PointCapacityControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -244,9 +256,7 @@
     </Content>
     <Resource Include="Map\map1.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Game\2D\RPG\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

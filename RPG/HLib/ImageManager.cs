@@ -5,7 +5,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace hoshi_lib.Image {
+namespace hoshi_lib {
 
     public class ImageManager {
 

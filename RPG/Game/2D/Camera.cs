@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using hoshi_lib.View;
+using hoshi_lib.Game._2D.RPG;
 
-namespace hoshi_lib.Game.Texture2D {
+namespace hoshi_lib.Game._2D {
     public class Camera : I4DirectMovement{
 
         private MapView mapView;
