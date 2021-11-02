@@ -4,5 +4,5 @@
 
 
 # Future
-This Game will not be updated continuously, but the game may become a web game.<br>
+This project will not be updated continuously, but the game may become a web game.<br>
 If I have time, and if I'm in a good kimoji.
