@@ -1,0 +1,14 @@
+﻿<local:HControlCollection x:Name="grid" x:Class="hoshi_lib.Game.TestView.FunctionalSquare"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    xmlns:local="clr-namespace:hoshi_lib.View"
+             mc:Ignorable="d" Height="80" Width="80" Background="#FF93A6B6" >
+    <local:HControl x:Name="HNum" Width="32" Height="15" VerticalAlignment="Bottom" HorizontalAlignment="Right" BackColor="{x:Null}" FontSize="14" FontColor="White" FontFamily="Minion Pro" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" />
+    <Polygon x:Name="P1" Fill="#FF040200" Points="0,0,0,0,0,0,0,0" Opacity="0.5" HorizontalAlignment="Right"/>
+    <Polygon x:Name="P2" Fill="#FF040200" Points="0,0,0,0,0,0,0,0" Opacity="0.5"/>
+    <Polygon x:Name="P3" Fill="#FF040200" Points="0,0,0,0,0,0,0,0" Opacity="0.5"/>
+    <Polygon x:Name="P4" Fill="#FF040200" Points="0,0,0,0,0,0,0,0" Opacity="0.5"/>
+
+</local:HControlCollection>

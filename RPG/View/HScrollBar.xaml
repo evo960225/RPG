@@ -1,0 +1,12 @@
+﻿<local:HControlCollection
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:hoshi_lib.View" x:Name="grid" x:Class="hoshi_lib.View.HScrollBar" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" Width="11" >
+
+    <local:HControl  x:Name="Line" HorizontalAlignment="Center"  Margin="5,0,0,0" Height="{Binding Height, ElementName=grid}" VerticalAlignment="Top" Width="1"/>
+    <local:HButton x:Name="Button" HorizontalAlignment="Center" Height="46" Margin="0,25,0,0" VerticalAlignment="Top" Width="{Binding Width, ElementName=grid}" LeaveBrush="AliceBlue" ClickBrush="Black" EnterBrush="#FF342828" Opacity="0.8" MouseDown="HButton_MouseDown"  BackColor="#FFAAAAAA"/>
+</local:HControlCollection>

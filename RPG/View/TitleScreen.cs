@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
 namespace hoshi_lib.View {
-    public class TitleScreen : Screen {
+    public class TitleScreen : Screen, hoshi_lib.View.ITitleScreen {
 
-        public HControl Title { get; private set; }
-        public HButton[] Buttons { get; private set; }
+        public IHControl title { get; private set; }
+        public IHButton[] Buttons { get; private set; }
   
-        public TitleScreen(WindowController winCtrl ,string title = "Window"):base(winCtrl,title) {
+        public TitleScreen(Size size,string title= null)
+            :base( size ){
+            
             CreateTitle(title);
         }
-
+        HControl ti;
         public void AddButtonClickEvent(int index, MouseButtonEventHandler eventHandler) {
             Buttons[index].AddClickEvent(eventHandler);
         }
@@ -29,20 +32,28 @@ namespace hoshi_lib.View {
             }
         }
         public void CreateTitle(string text) {
-            Title = new HControl() { Size = new hoshi_lib.Size(100, 100) };
-            Title.Text = text;
-            AddHControl(Title);
+             
+            ti = new HControl() { Size = new Size(100, 100) };
+            title=ti;
+            title.Text = text;
+            AddHControl(title);
+        }
+        public void SetStandardSytle() {
+            title.Size = new Size(300, 40);
+            title.Font = new FontFamily("微軟正黑體");
+            title.FontSize = 24.0;
+            title.BackColor = Brushes.Aqua;
+            ControlAligner.HAlignMiddle(Size, title);
+            title.Location = new Point(title.Location.X, 100);
+            if (Buttons != null) {
+                Array.ForEach(Buttons, x => x.Size = new Size(200, 40));
+                ControlAligner.VAlignSpan(Buttons, 300, 30);
+                ControlAligner.HAlignMiddle(Size,Buttons);
+            }
+           
         }
 
-        public void SetStandardSytle() {
-            Title.Size = new Size(300, 40);
-            Title.Font = new FontFamily("微軟正黑體");
-            Title.FontSize = 24;
-            Title.BackColor = Brushes.Aqua;
-            ScreenLayout.ControlHCenter(Size, Title, 100);
-            Array.ForEach(Buttons, x => x.Size = new Size(200, 40));
-            ScreenLayout.ControlHCenterVMargin(Size, Buttons, 25, 250);
-        }
+     
     }
 
 }

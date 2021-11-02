@@ -16,7 +16,7 @@ namespace hoshi_lib {
         }
         public ImageManager(string directory ,int ImageCount = 100) {
             Images = new Dictionary<string, BitmapImage>(ImageCount);
-            AddImageFromDirectory(directory);
+            AddImage(directory);
         }
         public ImageManager(string directory, IEnumerable<string> names, IEnumerator<string> keys, int ImageCount = 100) {
             Images = new Dictionary<string, BitmapImage>(ImageCount);
@@ -34,30 +34,6 @@ namespace hoshi_lib {
         public void AddImage(string key, BitmapImage bitmapImage) {
             Images[key] = bitmapImage;
         }
-       
-   
-        private void AddImageFromDirectory(string path) {
-            if (Directory.Exists(path)) {
-                foreach (var fname in Directory.GetFiles(path)) {
-                    var key = fname.Substring(fname.LastIndexOf('/')+1, fname.LastIndexOf('.') - fname.LastIndexOf('/')-1);
-                    this.AddImage(key, new Uri(fname,UriKind.Relative));
-                }
-            } else {
-                throw new Exception("找不到Image路徑");
-            }
-        }
-        private void AddImageFromDirectory(string path, IEnumerator<string> keys) {
-
-            if (Directory.Exists(path)) {
-                foreach (var fname in Directory.GetFiles(path)) {
-                    keys.MoveNext();
-                    if (keys.Current == null) throw new Exception("Key錯誤");
-                    this.AddImage(keys.Current, new Uri(fname, UriKind.Relative));
-                }
-            } else {
-                throw new Exception("找不到Image路徑");
-            }
-        }
         public void AddImage(string directory, IEnumerable<string> fileName, IEnumerator<string> keys) {
             foreach (var it in fileName) {
                 keys.MoveNext();
@@ -69,6 +45,29 @@ namespace hoshi_lib {
                 this.AddImage(keys.Current, new Uri(directory + it + ".png", UriKind.Relative));
             }
         }
+        public void AddImage(string path) {
+            if (Directory.Exists(path)) {
+                foreach (var fname in Directory.GetFiles(path)) {
+                    var key = fname.Substring(fname.LastIndexOf('/')+1, fname.LastIndexOf('.') - fname.LastIndexOf('/')-1);
+                    this.AddImage(key, new Uri(fname,UriKind.Relative));
+                }
+            } else {
+                throw new Exception("找不到Image路徑");
+            }
+        }
+        public void AddImage(string path, IEnumerator<string> keys) {
+
+            if (Directory.Exists(path)) {
+                foreach (var fname in Directory.GetFiles(path)) {
+                    keys.MoveNext();
+                    if (keys.Current == null) throw new Exception("Key錯誤");
+                    this.AddImage(keys.Current, new Uri(fname, UriKind.Relative));
+                }
+            } else {
+                throw new Exception("找不到Image路徑");
+            }
+        }
+        
 
     }
 

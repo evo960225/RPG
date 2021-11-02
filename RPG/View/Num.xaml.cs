@@ -7,7 +7,7 @@ namespace hoshi_lib.View {
     /// <summary>
     /// CardCount.xaml 的互動邏輯
     /// </summary>
-    public partial class Num : UserControl {
+    partial class UNum : UserControl {
 
         private int maxNum = 100;
         private int minNum = 0;
@@ -19,47 +19,81 @@ namespace hoshi_lib.View {
             get { return minNum; }
             set { if (value < maxNum) minNum = value; else minNum = maxNum; }
         }
+        public int Value { get; protected set; }
 
-        public Num() {
+        public UNum() {
             InitializeComponent();
+            Value = 0;
+            TBnum.Text = Value.ToString();
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e) {
-            Grid grid = (Grid)sender;
         }
-
         private void Polygon_MouseDown_Left(object sender, MouseButtonEventArgs e) {
-            LinearGradientBrush br = (LinearGradientBrush)l.Fill;
+            LinearGradientBrush br = (LinearGradientBrush)ButL.Fill;
             br.GradientStops[1].Color = Color.FromRgb(0,0,0);
 
-            Change_text((Convert.ToInt32(TBnum.Text) - 1));
+            SetValue(Value-1);
         }
         private void Polygon_MouseUp_Left(object sender, MouseButtonEventArgs e) {
-            LinearGradientBrush br = (LinearGradientBrush)l.Fill;
+            LinearGradientBrush br = (LinearGradientBrush)ButL.Fill;
             br.GradientStops[1].Color = Color.FromRgb(0xFF,0x00,0xDD);
         }
         private void Polygon_MouseDown_Right(object sender, MouseButtonEventArgs e) {
-            LinearGradientBrush br = (LinearGradientBrush)r.Fill;
+            LinearGradientBrush br = (LinearGradientBrush)ButR.Fill;
             br.GradientStops[1].Color = Color.FromRgb(0, 0, 0);
 
-            Change_text((Convert.ToInt32(TBnum.Text) + 1));
+            SetValue(Value+1);
         }
         private void Polygon_MouseUp_Right(object sender, MouseButtonEventArgs e) {
-            LinearGradientBrush br = (LinearGradientBrush)r.Fill;
+            LinearGradientBrush br = (LinearGradientBrush)ButR.Fill;
             br.GradientStops[1].Color = Color.FromRgb(0xFF, 0x00, 0xDD);
         }
 
-        public void Change_text(int s){
-            if (s < minNum) s = minNum;
-            if (s > maxNum) s = maxNum;
-            TBnum.Text = s.ToString();
+        public void SetValue(int value){
+            if (value < minNum) value = minNum;
+            if (value > maxNum) value = maxNum;
+            Value = value;
+            TBnum.Text = value.ToString();
         }
 
         public int GetValue() {
             return int.Parse(TBnum.Text);
         }
 
+    }
 
+    public class Num:HControl {
+        UNum num;
+        public int MaxNum {
+            get { return num.MaxNum; }
+            set { num.MaxNum = value; }
+        }
+        public int MinNum {
+            get { return num.MinNum; }
+            set { num.MinNum = value; }
+        }
+        public int Value {
+            get { return num.Value; }
+            set { num.SetValue(value); }
+        }
+        public bool Enable {
+            get { return num.IsEnabled; }
+            set { num.IsEnabled = value; }
+        }
+        public bool LButtonEnable {
+            get { return num.ButL.IsEnabled; }
+            set { num.ButL.IsEnabled = value; }
+        }
+        public bool RButtonEnable {
+            get { return num.ButR.IsEnabled; }
+            set { num.ButR.IsEnabled = value; }
+        }
+        public Num(UNum num) {
+            this.control = num;
+            this.num = num;
+            this.Size = new Size(num.Width,num.Height);
+        }
 
     }
 }

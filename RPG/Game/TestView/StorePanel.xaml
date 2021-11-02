@@ -1,0 +1,14 @@
+﻿<View:HControlCollection
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:View="clr-namespace:hoshi_lib.View" x:Class="hoshi_lib.Game.TestView.StorePanel" 
+             mc:Ignorable="d" Width="419.485" Height="239.339" BackColor="#FF5D5D5D" 
+             >
+    <View:HControl x:Name="HCost" HorizontalAlignment="Right" Height="18" Margin="0,0,82.485,10.339" VerticalAlignment="Bottom" Width="77" BackColor="{x:Null}" VerticalContentAlignment="Center" FontColor="#FFFFC5C5" Text="0" HorizontalContentAlignment="Right" Font="Microsoft YaHei UI"/>
+    <View:HControl HorizontalAlignment="Right" Height="18" Margin="0,0,164.485,10.339" VerticalAlignment="Bottom" Width="46" BackColor="{x:Null}" Text="Price" FontColor="#FFF58A8A" VerticalContentAlignment="Center"/>
+    <View:HButton x:Name="HBuy" HorizontalAlignment="Right" Height="18" Margin="0,0,10.485,10.339" VerticalAlignment="Bottom" Width="52" Text="購買" EnterBrush="#FF8F8F8F"/>
+
+
+</View:HControlCollection>

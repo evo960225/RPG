@@ -4,61 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using hoshi_lib.View;
-using hoshi_lib.Game._2D.RPG;
 
 namespace hoshi_lib.Game._2D {
-    public class Camera : I4DirectMovement{
-
-        private MapView mapView;
-        private Size screenSize;
-
-        private void postInit(){
-           
-        }
-        public Camera(Size screenSize,MapView mapView) {
-            this.screenSize = screenSize;
-            this.mapView = mapView;
+    public class Camera{
+        public IView BGView { get; set; }
+        private IView screen;
+        private Point limitLocation {
+            get {
+                return screen.Size - BGView.Size;
+            }
         }
 
-        public void MoveLeft() {
-            if (mapView.LeftBlockLocation().X >= (screenSize - mapView.Size).Width)
-                mapView.MoveToLeftBlockWidth();
-            else
-                mapView.Location.SetX(this.screenSize.Width - mapView.Size.Width);
+        public Camera(IView screen, IView bgview) {
+            BGView = bgview;
+            this.screen = screen;
         }
-        public void MoveUp() {
-            if (mapView.UpBlockLocation().Y >= (screenSize - mapView.Size).Height)
-                mapView.MoveToUpBlockHeight();
-            else
-                mapView.Location.SetY(this.screenSize.Height - mapView.Size.Height);
-
+        public void Lock(BioView view) {
+            MainTimer.Tick += delegate {
+                var point=-view.Location + (screen.Size / 2 - view.Size / 2).ToPoint();
+                if (point.X > 0) point.SetX(0);
+                if (point.Y > 0) point.SetY(0);
+                if (point.X < limitLocation.X) point.SetX(limitLocation.X);
+                if (point.Y < limitLocation.Y) point.SetY(limitLocation.Y);
+                BGView.Location = point;
+            };
         }
-        public void MoveDown() {
-            if (mapView.DownBlockLocation().Y <= 0)
-                mapView.MoveToDownBlockHeight();
-            else
-                mapView.Location.SetY(0);
-        }
-        public void MoveRight() {
-            if (mapView.RightBlockLocation().X <= 0)
-                mapView.MoveToRightBlockWidth();
-            else
-                mapView.Location.SetX(0);
-        }
-
-        BattleBio battleBio;
-        public void Observe(BattleBio battleBio) {
-            this.battleBio = battleBio;
-            battleBio.bgWorker.Loop += Move;
-            battleBio.bgWorker.End += MoveCompleted;
-            this.Move();
-        }
-
-        private void Move() {
-            mapView.Location = -battleBio.view.Location + screenSize / 2 - battleBio.view.Size / 2; 
-        }
-        private void MoveCompleted() {
-            mapView.Location = mapView.Location.ToRound();
-        }
+    
     }
 }

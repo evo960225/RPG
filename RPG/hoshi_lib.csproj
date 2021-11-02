@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{887F4625-B999-4C07-9091-3C55667083FA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>hoshi_lib</RootNamespace>
+    <AssemblyName>hoshi_lib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Data\BioLoader.cs" />
+    <Compile Include="Data\RoleLoader.cs" />
+    <Compile Include="Data\StuffLoader.cs" />
+    <Compile Include="Game\2D\AITest.cs" />
+    <Compile Include="Game\2D\BattlerGrowthItem.cs" />
+    <Compile Include="Game\2D\BattlerSetItem.cs" />
+    <Compile Include="Game\2D\Bio.cs" />
+    <Compile Include="Game\2D\BioView.cs" />
+    <Compile Include="Game\2D\Camera.cs" />
+    <Compile Include="Game\2D\IBattlerLevelUpItem.cs" />
+    <Compile Include="Game\2D\IDGroupType.cs" />
+    <Compile Include="Game\2D\Map.cs" />
+    <Compile Include="Game\2D\MapBlock.cs" />
+    <Compile Include="Game\2D\MapView.cs" />
+    <Compile Include="Game\2D\RegionMaker.cs" />
+    <Compile Include="Game\2D\RPG\Consumable.cs" />
+    <Compile Include="Game\2D\RPG\Skill.cs" />
+    <Compile Include="Game\2D\RPG\SkillManager.cs" />
+    <Compile Include="Game\2D\TerrainType.cs" />
+    <Compile Include="Game\2D\TerrainManager.cs" />
+    <Compile Include="Game\2D\WorldCommand.cs" />
+    <Compile Include="Game\EventMaker.cs" />
+    <Compile Include="Game\ICoolDown.cs" />
+    <Compile Include="Game\IGameItem.cs" />
+    <Compile Include="Game\IGameObject.cs" />
+    <Compile Include="Game\IMoney.cs" />
+    <Compile Include="Game\IUseable.cs" />
+    <Compile Include="Game\RPG\EquipmentManager.cs" />
+    <Compile Include="Game\RPG\Addenda.cs" />
+    <Compile Include="Game\RPG\BasePlus.cs" />
+    <Compile Include="Game\RPG\EquipmentType.cs" />
+    <Compile Include="Game\RPG\Equipment.cs" />
+    <Compile Include="Game\RPG\BattleBaseValue.cs" />
+    <Compile Include="Game\RPG\StateManager.cs" />
+    <Compile Include="Game\RPG\ICount.cs" />
+    <Compile Include="Game\RPG\ICountable.cs" />
+    <Compile Include="Game\RPG\IProductable.cs" />
+    <Compile Include="Game\RPG\IProduct.cs" />
+    <Compile Include="Game\RPG\IStuff.cs" />
+    <Compile Include="Game\RPG\CapacityPoint.cs" />
+    <Compile Include="Game\RPG\StoreManager.cs" />
+    <Compile Include="Game\RPG\Stuff.cs" />
+    <Compile Include="Game\RPG\StuffManager.cs" />
+    <Compile Include="Game\TestView\AccoutermentPanel.xaml.cs">
+      <DependentUpon>AccoutermentPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\TestView\BioCapacity.xaml.cs">
+      <DependentUpon>BioCapacity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\TestView\IGamePanel.cs" />
+    <Compile Include="Game\TestView\ItemDescripionPanel.xaml.cs">
+      <DependentUpon>ItemDescripionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\TestView\MessageFrame.xaml.cs">
+      <DependentUpon>MessageFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\TestView\MousePicked.cs" />
+    <Compile Include="Game\TestView\PointCapacityPanel.xaml.cs">
+      <DependentUpon>PointCapacityPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\TestView\QuickSlotPanel.xaml.cs">
+      <DependentUpon>QuickSlotPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\TestView\RoleInfoPanel.xaml.cs">
+      <DependentUpon>RoleInfoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\TestView\SkillItem.xaml.cs">
+      <DependentUpon>SkillItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\TestView\SkillPanel.xaml.cs">
+      <DependentUpon>SkillPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\TestView\FunctionalSquare.xaml.cs">
+      <DependentUpon>FunctionalSquare.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\TestView\StorePanel.xaml.cs">
+      <DependentUpon>StorePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\TestView\StuffPanel.xaml.cs" />
+    <Compile Include="HLib\Equation.cs" />
+    <Compile Include="HLib\KeyDelegate.cs" />
+    <Compile Include="HLib\MatrixSize.cs" />
+    <Compile Include="HLib\Pair.cs" />
+    <Compile Include="Data\UserDataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDataDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\AnimateControl.cs" />
+    <Compile Include="View\ConditionTimer.cs" />
+    <Compile Include="View\Direction.cs" />
+    <Compile Include="HLib\HMath.cs" />
+    <Compile Include="HLib\ImageManager.cs" />
+    <Compile Include="HLib\Log.cs" />
+    <Compile Include="HLib\MatrixPoint.cs" />
+    <Compile Include="HLib\Point.cs" />
+    <Compile Include="HLib\Size.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ControlAligner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\HButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\HControlCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\HScrollBar.xaml.cs">
+      <DependentUpon>HScrollBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HTextControl.cs" />
+    <Compile Include="View\HTimer.cs" />
+    <Compile Include="View\IAnimateControl.cs" />
+    <Compile Include="View\IFont.cs" />
+    <Compile Include="View\IHButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\IHControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\IHControlCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\IHoshiView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\IHTextControl.cs" />
+    <Compile Include="View\IMatrixControl.cs" />
+    <Compile Include="View\IScreen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ITitleScreen.cs" />
+    <Compile Include="View\IView.cs" />
+    <Compile Include="Game\MainTimer.cs" />
+    <Compile Include="View\MatrixControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\MouseEevent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Screen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\StackControl.cs" />
+    <Compile Include="View\SubWindow.xaml.cs">
+      <DependentUpon>SubWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TitleScreen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\HControl.xaml.cs">
+      <DependentUpon>HControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WindowController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Game\TestView\AccoutermentPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Game\TestView\BioCapacity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Game\TestView\ItemDescripionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Game\TestView\MessageFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Game\TestView\PointCapacityPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Game\TestView\QuickSlotPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Game\TestView\RoleInfoPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Game\TestView\SkillItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Game\TestView\SkillPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Game\TestView\FunctionalSquare.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Game\TestView\StorePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\HControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HScrollBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SubWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Data\UserDataDataSet.xsc">
+      <DependentUpon>UserDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\UserDataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UserDataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\UserDataDataSet.xss">
+      <DependentUpon>UserDataDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Stuff\紅色藥水.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\UserData.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

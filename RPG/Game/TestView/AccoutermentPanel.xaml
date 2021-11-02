@@ -1,0 +1,27 @@
+﻿<View:HControlCollection
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:View="clr-namespace:hoshi_lib.View"
+             xmlns:local="clr-namespace:hoshi_lib.Game.TestView" x:Class="hoshi_lib.Game.TestView.AccoutermentPanel"
+             mc:Ignorable="d" Width="249.633" Height="187.5" BackColor="#FFD9C6F9">
+
+    <View:HControl Height="32" Width="32" Text="頭部" Opacity="0.7" Margin="71,23,0,0"/>
+    <View:HControl Height="32"  Width="32" Text="手臂" Opacity="0.7" Margin="108,60,0,0"/>
+    <View:HControl Height="32"  Width="32" Text="上體" Opacity="0.7" Margin="71,60,0,0"/>
+    <View:HControl Height="32" Width="32" Text="腿部" Opacity="0.7" Margin="71,97,0,0"/>
+    <View:HControl Height="32"  Width="32" Text="鞋子" Opacity="0.7" Margin="71,134,0,0"/>
+    <View:HControl Height="32" Width="32" Text="武器" Opacity="0.7" Margin="34,60,0,0"/>
+    <View:HControl Height="32"  Width="32" Text="耳飾" Opacity="0.7" Margin="181,60,0,0"/>
+    <View:HControl Height="32" Width="32" Text="項鍊" Opacity="0.7" Margin="181,23,0,0"/>
+
+    <local:FunctionalSquare x:Name="HHead" Height="32" Width="32" Margin="71,23,0,0" BackColor="{x:Null}"/>
+    <local:FunctionalSquare x:Name="HArm" Height="32"  Width="32" Margin="108,60,0,0" BackColor="{x:Null}"/>
+    <local:FunctionalSquare x:Name="HClothes" Height="32"  Width="32" Margin="71,60,0,0" BackColor="{x:Null}"/>
+    <local:FunctionalSquare x:Name="HLeg" Height="32" Width="32" Margin="71,97,0,0" BackColor="{x:Null}"/>
+    <local:FunctionalSquare x:Name="HShoes" Height="32"  Width="32" Margin="71,134,0,0" BackColor="{x:Null}"/>
+    <local:FunctionalSquare x:Name="HWeapon" Height="32" Width="32" Margin="34,60,0,0" BackColor="{x:Null}"/>
+    <local:FunctionalSquare x:Name="HEarring" Height="32"  Width="32" Margin="181,60,0,0" BackColor="{x:Null}"/>
+    <local:FunctionalSquare x:Name="HNecklace" Height="32" Width="32" Margin="181,23,0,0" BackColor="{x:Null}"/>
+</View:HControlCollection>

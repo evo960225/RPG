@@ -7,11 +7,11 @@ using System.Windows;
 // 組件的一般資訊是由下列的屬性集控制。
 // 變更這些屬性的值即可修改組件的相關
 // 資訊。
-[assembly: AssemblyTitle("RPG")]
+[assembly: AssemblyTitle("hoshi_lib")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RPG")]
+[assembly: AssemblyProduct("hoshi_lib")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -28,17 +28,10 @@ using System.Windows;
 //底下的 NeutralResourceLanguage 屬性。更新 "en-US"
 //下面一行符合專案檔中的 UICulture 設定。
 
-//[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
+//[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackPoint.Satellite)]
 
 
-[assembly: ThemeInfo(
-    ResourceDictionaryLocation.None, //主題特定資源字典的位置
-    //(用於當資源不在頁面、
-    // 或應用程式資源字典)
-    ResourceDictionaryLocation.SourceAssembly //泛用資源字典的位置
-    //(用於當資源不在頁面、
-    // 應用程式，或任何特定主題的資源字典)
-)]
+
 
 
 // 組件的版本資訊是由下列四項值構成: 
@@ -53,3 +46,4 @@ using System.Windows;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: System.Windows.ThemeInfo(System.Windows.ResourceDictionaryLocation.None, System.Windows.ResourceDictionaryLocation.SourceAssembly)]

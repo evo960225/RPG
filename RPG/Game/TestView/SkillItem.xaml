@@ -1,0 +1,20 @@
+﻿<View:HControlCollection
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:hoshi_lib.Game.TestView" xmlns:View="clr-namespace:hoshi_lib.View" x:Class="hoshi_lib.Game.TestView.SkillItem" 
+             mc:Ignorable="d" Width="220" Height="50" Background="#FFC1C1C1">
+
+
+    <local:FunctionalSquare x:Name="HImage" Height="32" Width="32" MarkOpacity="0.5" MarkColor="Black" Margin="9,9,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+    <View:HControl x:Name="HName" HorizontalAlignment="Left" Height="16" VerticalAlignment="Top" Width="97" Background="{x:Null}" Text="名稱名稱" FontColor="#FF573232" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  Margin="49,8,0,0"/>
+    <View:HControl x:Name="HConstName" HorizontalAlignment="Left" Height="16" VerticalAlignment="Top" Width="40" Background="{x:Null}" Text="消耗" FontColor="#FF573232" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="148,8,0,0"/>
+    <View:HControl x:Name="HCost" HorizontalAlignment="Left" Height="16" VerticalAlignment="Top" Width="34" Background="{x:Null}" Text="999" FontColor="#FF573232" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="186,8,0,0"/>
+    <View:HButton x:Name="ButtonPlus" Content="+" HorizontalAlignment="Left" Height="16" VerticalAlignment="Top" Width="38" FontSize="9" FontWeight="Bold" FontFamily="Microsoft YaHei UI" BackColor="#FFDADADA" BorderThickness="2" Margin="168,28,0,0" BorderBrush="#FFA0B2AA" EnterBrush="#FF878787"/>
+    <View:HControl HorizontalAlignment="Left" Height="16" VerticalAlignment="Top" Width="25" Background="{x:Null}" Text="Lv" FontColor="#FF573232" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="50,27,0,0"/>
+    <View:HControl x:Name="HLevel" HorizontalAlignment="Left" Height="16" VerticalAlignment="Top" Width="25" Background="{x:Null}" Text="99" FontColor="#FF573232" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  Margin="74,27,0,0" />
+
+
+</View:HControlCollection>

@@ -1,18 +1,18 @@
 ﻿
 namespace hoshi_lib.View {
     
-    public enum MouseEevent {
-        MouseEnter,
-        MouseLeave,
-        MouseMove,
+    public enum MouseEvent {
+        Enter,
+        Leave,
+        Move,
     }
     
-    public enum MouseButtomEevent {
-        MouseDown,
-        MouseUp,
-        MouseLeftButtonDown,
-        MouseLeftButtonUp,
-        MouseRightButtonDown,
-        MouseRightButtonUp
+    public enum MouseButtomEvent {
+        Down,
+        Up,
+        LeftButtonDown,
+        LeftButtonUp,
+        RightButtonDown,
+        RightButtonUp
     }
 }

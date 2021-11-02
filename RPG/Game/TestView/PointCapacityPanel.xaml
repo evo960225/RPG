@@ -1,0 +1,16 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:View="clr-namespace:hoshi_lib.View" x:Class="hoshi_lib.Game.TestView.PointCapacityPanel" 
+             mc:Ignorable="d" Width="255" Height="77"  Background="#FF6C7666" HorizontalAlignment="Left" VerticalAlignment="Top">
+    <Grid VerticalAlignment="Top" Background="#FFB9EAA7" Margin="3" Width="255" Height="90">
+        <ProgressBar x:Name="BarHp" Margin="35,0,16,44" Height="15" VerticalAlignment="Bottom" Value="50" Foreground="#FFA62E5A"/>
+        <ProgressBar x:Name="BarSp" Margin="35,0,16,24" Height="15" VerticalAlignment="Bottom" Foreground="#FF1B2964" Value="50"/>
+        <TextBlock x:Name="CRoleName" Margin="47,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" Foreground="#FF16341D" FontSize="14" HorizontalAlignment="Left" Width="181" Text="名"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" Text="HP" VerticalAlignment="Top" Foreground="#FF612257"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="SP" VerticalAlignment="Top" Foreground="#FF612257"/>
+        <View:HControl x:Name="CLv" HorizontalAlignment="Left"  Margin="5,6,0,0" VerticalAlignment="Top" Width="37" Height="19" BackColor="{x:Null}" Text="LV1" FontSize="13"/>
+    </Grid>
+</UserControl>

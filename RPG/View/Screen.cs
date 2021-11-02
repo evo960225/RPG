@@ -5,18 +5,13 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace hoshi_lib.View {
-    public class Screen : HControlCollection {
+    public class Screen : HControlCollection, IScreen {
 
-
-        public WindowController winCtrl { get; private set; }
-        
-        private Screen() {
-            
+        public Screen(Size size) {
+            this.Size = size;
         }
-        public Screen(WindowController winCtrl, string title = "Window") {
-            this.winCtrl = winCtrl;
-            winCtrl.SetTitle(title);
-            winCtrl.SetScreen(this);
+        public void NextScreen(Screen screen){
+            
         }
 
     }

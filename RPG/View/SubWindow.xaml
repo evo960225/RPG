@@ -1,0 +1,12 @@
+﻿<local:HControlCollection
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:hoshi_lib.View" x:Name="hControlCollection" x:Class="hoshi_lib.View.SubWindow" 
+             mc:Ignorable="d" Width="422.897" Height="327.574" ClipToBounds="True">
+
+    <local:HControl x:Name="Title" Height="20" Width="{Binding Width, ElementName=hControlCollection}" HorizontalAlignment="Stretch" MouseDown="Title_MouseDown"/>
+    <local:HButton x:Name="HbutExit" Content="X" Height="20" Margin="0,0,0,0" Width="20" MouseDown="HbutExit_MouseDown" HorizontalAlignment="Right"/>
+    <local:HButton x:Name="HbutHide" Content="-" Height="20" Margin="0,0,20,0" Width="20" MouseDown="HbutHide_MouseDown" FontSize="20" HorizontalAlignment="Right" />
+</local:HControlCollection>

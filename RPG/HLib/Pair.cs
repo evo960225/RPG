@@ -4,62 +4,69 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hoshi_lib {
-
+namespace hoshi_lib.HLib {
     public struct Pair {
 
         public int X;
         public int Y;
 
         public Pair(int x, int y) {
-            this.X = x;
-            this.Y = y;
+            X = x;
+            Y = y;
+        }
+        public void Add(Pair pair) {
+            this.X += pair.X;
+            this.Y += pair.Y;
+        }
+        public void Sub(Pair pair) {
+            this.X -= pair.X;
+            this.Y -= pair.Y;
+        }
+        public Point AddX(int x) {
+            return new Point(this.X += x, this.Y);
+        }
+        public Point AddY(int y) {
+            return new Point(this.X, this.Y += y);
+        }
+        public Point SetX(int x) {
+            return new Point(x, this.Y);
+        }
+        public Point SetY(int y) {
+            return new Point(this.X, y);
         }
 
-        public static Pair operator +(Pair location1, Pair location2) {
-            return new Pair(location1.X + location2.X, location1.Y + location2.Y);
+        public static Pair operator +(Pair pair, Pair pair2) {
+            return new Pair(pair.X + pair2.X, pair.Y + pair2.Y);
         }
-        public static Pair operator +(Pair location, int value) {
-            return new Pair(location.X + value, location.Y + value);
+        public static Pair operator +(Pair pair, int value) {
+            return new Pair(pair.X + value, pair.Y + value);
         }
-        public static Pair operator -(Pair location1, Pair location2) {
-            return new Pair(location1.X - location2.X, location1.Y - location2.Y);
+        public static Pair operator -(Pair pair1, Pair pair2) {
+            return new Pair(pair1.X - pair2.X, pair1.Y - pair2.Y);
         }
-        public static Pair operator -(Pair location, int value) {
-            return new Pair(location.X - value, location.Y - value);
+        public static Pair operator -(Pair pair, int value) {
+            return new Pair(pair.X - value, pair.Y - value);
         }
-        public static Pair operator *(Pair location, int value) {
-            return new Pair(location.X * value, location.Y * value);
+        public static Pair operator *(Pair pair, int value) {
+            return new Pair(pair.X * value, pair.Y * value);
         }
-        public static Pair operator /(Pair location, int value) {
-            return new Pair(location.X / value, location.Y / value);
+        public static Pair operator *(Pair pair, Pair value) {
+            return new Pair(pair.X * value.X, pair.Y * value.Y);
         }
-        public static bool operator ==(Pair location1, Pair location2) {
-            if (location1.X == location2.X && location1.Y == location2.Y)
-                return true;
-            else
-                return false;
+        public static Pair operator /(Pair pair, int value) {
+            return new Pair(pair.X / value, pair.Y / value);
         }
-        public static bool operator !=(Pair location1, Pair location2) {
-            if (location1.X == location2.X && location1.Y == location2.Y)
-                return false;
-            else
-                return true;
+        public static Pair operator /(Pair pair, Pair value) {
+            return new Pair(pair.X / value.X, pair.Y / value.Y);
         }
-
-        public Pair AddX(int x) {
-            return new Pair(this.X + x, this.Y);
+        public static bool operator ==(Pair pair, Pair value) {
+            return pair.X == value.X && pair.Y == value.Y;
         }
-        public Pair AddY(int y) {
-            return new Pair(this.X, this.Y + y);
+        public static bool operator !=(Pair pair, Pair value) {
+            return pair.X != value.X || pair.Y != value.Y;
         }
-        public Pair SetX(int x) {
-            return new Pair(x, this.Y);
+        public override string ToString() {
+            return this.GetType().ToString() + ":(" + X + "," + Y + ")";
         }
-        public Pair SetY(int y) {
-            return new Pair(this.X, y);
-        }
-
     }
 }
-

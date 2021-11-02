@@ -1,0 +1,16 @@
+﻿<View:HControlCollection
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:hoshi_lib.Game.TestView" xmlns:View="clr-namespace:hoshi_lib.View" x:Class="hoshi_lib.Game.TestView.SkillPanel" 
+             mc:Ignorable="d" Width="255" Background="#FFECECEC" Height="270" >
+    <View:HScrollBar x:Name="Scroll" HorizontalAlignment="Left"  Margin="233,10,0,0" VerticalAlignment="Top" Width="12" Height="250"  Max="0" Value="0" ShowLarge="5"/>
+
+    <View:HControl HorizontalAlignment="Left" Height="250" Margin="10,10,0,0" VerticalAlignment="Top" Width="218" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" BackColor="{x:Null}" ClipToBounds="True">
+
+        <View:StackControl x:Name="SkillItems" HorizontalAlignment="Left"  Margin="0,0,0,0" Height="250" VerticalAlignment="Top" Width="219"/>
+
+    </View:HControl>
+
+</View:HControlCollection>

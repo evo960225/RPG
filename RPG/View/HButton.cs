@@ -3,11 +3,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Input;
-using hoshi_lib.Input;
+//using hoshi_lib.Input;
 
 namespace hoshi_lib.View {
 
-    public class HButton : HControl {
+    public class HButton : HControl, IHButton {
+        
 
         private Brush _LeaveBrush;
         private Brush _EnterBrush;
@@ -16,8 +17,8 @@ namespace hoshi_lib.View {
             get { return _LeaveBrush; }
             set {
                 _LeaveBrush = value;
-                this.RemoveMouseEvent(MouseEevent.MouseLeave, DefaultLeaveEvent);
-                this.AddMouseEvent(MouseEevent.MouseLeave, DefaultLeaveEvent);
+                this.RemoveMouseEvent(MouseEvent.Leave, DefaultLeaveEvent);
+                this.AddMouseEvent(MouseEvent.Leave, DefaultLeaveEvent);
                 this.BackColor = _LeaveBrush;
             }
         }
@@ -25,24 +26,30 @@ namespace hoshi_lib.View {
             get { return _EnterBrush; }
             set {
                 _EnterBrush = value;
-                this.RemoveMouseEvent(MouseEevent.MouseEnter, DefaultEnterEvent);
-                this.AddMouseEvent(MouseEevent.MouseEnter, DefaultEnterEvent);
-                this.RemoveMouseEvent(MouseButtomEevent.MouseUp, DefaultEnterEvent);
-                this.AddMouseEvent(MouseButtomEevent.MouseUp, DefaultEnterEvent);
+                this.RemoveMouseEvent(MouseEvent.Enter, DefaultEnterEvent);
+                this.AddMouseEvent(MouseEvent.Enter, DefaultEnterEvent);
+                this.RemoveMouseEvent(MouseButtomEvent.Up, DefaultEnterEvent);
+                this.AddMouseEvent(MouseButtomEvent.Up, DefaultEnterEvent);
             }
         }
         public Brush ClickBrush {
             get { return _ClickBrush; }
             set {
                 _ClickBrush = value;
-                this.RemoveMouseEvent(MouseButtomEevent.MouseDown, DefaultClickEvent);
-                this.AddMouseEvent(MouseButtomEevent.MouseDown, DefaultClickEvent);
+                this.RemoveMouseEvent(MouseButtomEvent.Down, DefaultClickEvent);
+                this.AddMouseEvent(MouseButtomEvent.Down, DefaultClickEvent);
+            }
+        }
+        public Brush BackColor {
+            get { return base.BackColor; }
+            set {
+                base.BackColor = value;
+                _LeaveBrush = _EnterBrush = _ClickBrush = value;
             }
         }
         public ImageSource LeaveImage;
         public ImageSource EnterImage;
         public ImageSource ClickImage;
-
 
         public HButton() {
             InitBrush();
@@ -50,25 +57,25 @@ namespace hoshi_lib.View {
         }
 
         public void AddLeaveEvent(MouseEventHandler eh) {
-            this.AddMouseEvent(MouseEevent.MouseLeave, eh);
+            this.AddMouseEvent(MouseEvent.Leave, eh);
         }
         public void AddEnterEvent(MouseEventHandler eh) {
-            this.AddMouseEvent(MouseEevent.MouseEnter, eh);
-            this.AddMouseEvent(MouseButtomEevent.MouseUp, new MouseButtonEventHandler(eh));
+            this.AddMouseEvent(MouseEvent.Enter, eh);
+            this.AddMouseEvent(MouseButtomEvent.Up, new MouseButtonEventHandler(eh));
         }
         public void AddClickEvent(MouseButtonEventHandler eh) {
-            this.AddMouseEvent(MouseButtomEevent.MouseDown, eh);
+            this.AddMouseEvent(MouseButtomEvent.Down, eh);
         }
 
         public void InitStateEvent() {
-            this.AddMouseEvent(MouseButtomEevent.MouseDown, DefaultLeaveEvent);
-            this.AddMouseEvent(MouseButtomEevent.MouseDown, DefaultEnterEvent);
-            this.AddMouseEvent(MouseButtomEevent.MouseDown, DefaultClickEvent);
+            this.AddMouseEvent(MouseButtomEvent.Down, DefaultLeaveEvent);
+            this.AddMouseEvent(MouseButtomEvent.Down, DefaultEnterEvent);
+            this.AddMouseEvent(MouseButtomEvent.Down, DefaultClickEvent);
         }
         public void InitBrush(Brush brush = null) {
 
             if (brush == null) {
-                brush = this.BackColor;
+                brush = Brushes.LightGray;
             } else {
                 this.BackColor = brush;
             }
@@ -78,13 +85,13 @@ namespace hoshi_lib.View {
         }
 
         private void DefaultLeaveEvent(object sender, RoutedEventArgs args) {
-            this.BackColor = LeaveBrush;
+            this.Background = LeaveBrush;
         }
         private void DefaultEnterEvent(object sender, RoutedEventArgs args) {
-            this.BackColor = EnterBrush;
+            this.Background = EnterBrush;
         }
         private void DefaultClickEvent(object sender, RoutedEventArgs args) {
-            this.BackColor = ClickBrush;
+            this.Background = ClickBrush;
         }
     }
 }

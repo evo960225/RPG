@@ -1,0 +1,19 @@
+﻿<View:HControlCollection
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:View="clr-namespace:hoshi_lib.View" x:Name="grid" x:Class="hoshi_lib.Game.TestView.BioCapacity" 
+             mc:Ignorable="d" Height="Auto" Width="{Binding Width, ElementName=BioImage}" Margin="0,-30,0,0"  >
+    <View:HControl x:Name="HBioImage" Height="91"  Width="90" Margin="0,-3,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Top">
+        <View:HControl.BackColor>
+            <ImageBrush TileMode="Tile" Stretch="None"/>
+        </View:HControl.BackColor>
+    </View:HControl>
+    <View:HControl x:Name="HBioName" Width="{Binding Width, ElementName=grid}" Margin="0,-25,0,0" Text="Name" Background="{x:Null}" FontColor="White" Height="20" HorizontalAlignment="Stretch"/>
+    <View:HControl x:Name="HBar" Height="5"  Background="{x:Null}" HorizontalContentAlignment="Left" Width="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,-8,0,0"  >
+        <View:HControl.Content>
+            <View:HControl x:Name="HBarValue" Height="{Binding Height, ElementName=HBar}" Width="50" BackColor="#FF874040" Background="#FFB45454" HorizontalAlignment="Left" Foreground="{x:Null}" VerticalAlignment="Top" />
+        </View:HControl.Content>
+    </View:HControl>
+</View:HControlCollection>
