@@ -55,7 +55,6 @@
     </ApplicationDefinition>
     <Compile Include="Data\BioDataDataSet.cs">
       <DependentUpon>BioDataDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Data\BioDataDataSet.Designer.cs">
